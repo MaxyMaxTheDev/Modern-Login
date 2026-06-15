@@ -9,7 +9,7 @@
     /* Font-weight tokens to make bold/medium choices explicit */
     --fw-normal: 400;
     --fw-medium: 500;
-    --fw-semibold: 600;
+    --fw-semibold: 700;
     --fw-bold: 700;
 }
 
