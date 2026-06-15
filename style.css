@@ -13,6 +13,12 @@
     --fw-bold: 700;
 }
 
+/* Utilities for explicit weight control */
+.fw-normal{ font-weight: var(--fw-normal); }
+.fw-medium{ font-weight: var(--fw-medium); }
+.fw-semibold{ font-weight: var(--fw-semibold); }
+.fw-bold{ font-weight: var(--fw-bold); }
+
 *{
     margin: 0;
     padding: 0;
@@ -27,9 +33,33 @@
     font-family: var(--font-sans);
 }
 
+/* Prevent browsers from synthesizing fake bold/italic for Comfortaa — prefer actual font files */
+/* Also enable font-smoothing for crisper glyph rendering */
+body, html{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-synthesis: none;
+}
+
 /* Ensure semantic and heading elements render bold when intended */
 strong, b,
 h1, h2, h3, h4, h5, h6{
+    font-weight: var(--fw-bold);
+}
+
+/* Make emphasized text slightly less heavy than headings but still distinct */
+.container p strong,
+.container p b{
+    font-weight: var(--fw-semibold);
+}
+
+/* Specific UI elements that should use the bold weight for visual clarity */
+.container button,
+.toggle-panel h1,
+.toggle-panel h2,
+.form-container .title,
+.sign-in h2,
+.sign-up h2{
     font-weight: var(--fw-bold);
 }
 
@@ -70,6 +100,8 @@ body{
     font-size: 13px;
     text-decoration: none;
     margin: 15px 0 10px;
+    /* links can be a medium weight to improve readability */
+    font-weight: var(--fw-medium);
 }
 
 .container button{
