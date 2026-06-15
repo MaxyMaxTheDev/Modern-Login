@@ -5,6 +5,12 @@
        Secondary 'sans' font kept as a separate named stack (not as a fallback). */
     --font-primary: 'Comfortaa';
     --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+    /* Font-weight tokens to make bold/medium choices explicit */
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
 }
 
 *{
@@ -12,11 +18,19 @@
     padding: 0;
     box-sizing: border-box;
     font-family: var(--font-primary);
+    /* default to normal weight so bold places are explicit */
+    font-weight: var(--fw-normal);
 }
 
 /* Utility class to explicitly use the sans-serif stack when desired (not as a fallback) */
 .font-sans{
     font-family: var(--font-sans);
+}
+
+/* Ensure semantic and heading elements render bold when intended */
+strong, b,
+h1, h2, h3, h4, h5, h6{
+    font-weight: var(--fw-bold);
 }
 
 body{
@@ -65,7 +79,8 @@ body{
     padding: 10px 45px;
     border: 1px solid transparent;
     border-radius: 8px;
-    font-weight: 600;
+    /* use the bold weight for buttons so Comfortaa renders a clear bold style */
+    font-weight: var(--fw-bold);
     letter-spacing: 0.5px;
     text-transform: uppercase;
     margin-top: 10px;
