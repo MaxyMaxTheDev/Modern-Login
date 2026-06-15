@@ -44,6 +44,8 @@ body, html{
 /* Ensure semantic and heading elements render bold when intended */
 strong, b,
 h1, h2, h3, h4, h5, h6{
+    /* Explicitly use Comfortaa at bold 700 for headings and strong text */
+    font-family: var(--font-primary);
     font-weight: var(--fw-bold);
 }
 
